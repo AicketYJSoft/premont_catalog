@@ -64,7 +64,7 @@ export default function PremontAmpouleIntroPage() {
           </h1>
 
           <p className="text-base sm:text-lg text-muted-foreground">
-            예기치 않게 찾아온 아기 피부 트러블, 프레망 앰플 한 방울로 금세 편안하게 진정시켜 보세요. 트러블 완화를 위한 집중 영양 & 진정 케어.
+            예기치 않게 찾아온 아기 피부 트러블, 프레망 앰플 한 방울로 금세 편안하게 진정시켜 보세요.<br />트러블 완화를 위한 집중 영양 & 진정 케어.
           </p>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -73,7 +73,7 @@ export default function PremontAmpouleIntroPage() {
           </div>
 
           <div className="text-sm sm:text-base text-muted-foreground">
-            <b>피부 타입</b>: 민감성·트러블 피부(신생아 태열·침독 등) &nbsp;|&nbsp; <b>향</b>: 무향(인공향 0%, 자연 유래 성분 향만 약하게) &nbsp;|&nbsp; <b>제형</b>: 투명 고농축 앰플(가볍고 산뜻한 수분 에센스 타입)
+            <b>피부 타입</b>: 민감성·트러블 피부(신생아 태열·침독 등) &nbsp;|&nbsp; <b>향</b>: 무향(인공향 0%, 자연 유래 성분 향만 약하게)<br /><b>제형</b>: 투명 고농축 앰플(가볍고 산뜻한 수분 에센스 타입)
           </div>
         </motion.div>
 
