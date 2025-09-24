@@ -10,7 +10,7 @@ export default function App() {
     <div className="min-h-screen bg-white">
       <header className="sticky top-0 z-10 bg-white/80 backdrop-blur border-b">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <h1 className="font-semibold">Premont React Pages</h1>
+          <h1 className="font-semibold">Premont Catalog</h1>
           <nav className="flex gap-2">
             <Button variant={tab==='lotion'?'default':'outline'} onClick={() => setTab('lotion')}>로션</Button>
             <Button variant={tab==='cream'?'default':'outline'} onClick={() => setTab('cream')}>크림</Button>
