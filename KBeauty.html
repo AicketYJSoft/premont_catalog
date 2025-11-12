@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Beauty 해외 시장 진출 전략</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 
+    Narrative Plan:
+    1.  Title: K-Beauty Overseas Market Entry Strategy.
+    2.  Section 1: Elshia (345 Cream) Success Factor Analysis - Why it worked.
+    3.  Section 2: Competitor Landscape (Anua, Skin1004, BoJ) - Key products & strategies.
+    4.  Section 3: Core Skincare Trend Analysis - Charting what consumers want.
+    5.  Section 4: Platform Deep Dive (Amazon vs. TikTok Shop) - How products are sold.
+    6.  Section 5: Strategic Recommendations Table - Actionable insights (with Texture).
+    7.  Section 6: TikTok Shop Shipping Strategy - Fulfilling demand.
+    
+    Visualization Choices:
+    1.  Elshia Success (Goal: Inform) -> Doughnut Chart (Chart.js/Canvas) - Shows simple breakdown of success factors. NO SVG.
+    2.  Competitor Landscape (Goal: Organize) -> HTML/CSS Cards - Clear side-by-side comparison. NO SVG.
+    3.  Skincare Trends (Goal: Compare) -> Bar Chart (Chart.js/Canvas) - Compares interest in key trends. Labels require wrapping. NO SVG.
+    4.  Platform Funnels (Goal: Organize) -> HTML/CSS Flow Diagram - Shows process. NO SVG/Mermaid.
+    5.  Recommendations (Goal: Organize) -> HTML Table - User-requested format.
+    6.  Shipping Strategy (Goal: Organize) -> HTML/CSS Cards - Clear options. NO SVG.
+    
+    Selected Palette: Energetic & Playful (#FF6B6B, #FFD166, #06D6A0, #118AB2, #073B4C)
+    
+    CRITICAL CONFIRMATION: NO SVG or Mermaid JS were used. All charts are Chart.js (Canvas). All diagrams are structured HTML/CSS with Tailwind.
+    -->
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            margin: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .chart-container-bar {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 350px;
+            margin: auto;
+        }
+         @media (min-width: 768px) {
+            .chart-container-bar {
+                height: 400px;
+            }
+        }
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: #118AB2;
+            margin: 0 0.5rem;
+        }
+        .flow-step {
+            background-color: #F0F9FF;
+            border: 2px solid #118AB2;
+            color: #073B4C;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-[#073B4C]">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-10">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#118AB2] mb-4">K-Beauty 해외 시장 진출 전략</h1>
+            <p class="text-lg md:text-xl text-gray-700">엘시아, 아노아, 스킨천사, 조선미녀 분석을 통한 성공 로드맵</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+            <div class="md:col-span-1 lg:col-span-1 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#073B4C] mb-4">1. 엘시아 (Elshia) 성공 요인</h2>
+                <p class="text-gray-600 mb-6">엘시아, 특히 '345 릴리프 크림'의 성공은 명확한 '더마' 포지셔닝과 성분 중심 마케팅에 있습니다. '3:4:5'라는 세라마이드, 지방산, 콜레스테롤의 피부 장벽 비율을 직관적으로 내세운 것이 주효했습니다.</p>
+                <div class="chart-container">
+                    <canvas id="elshiaChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-4">차트: 345 릴리프 크림 성공 요인 비중</p>
+            </div>
+
+            <div class="md:col-span-1 lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-[#073B4C] mb-4">2. 핵심 스킨케어 트렌드 분석</h2>
+                <p class="text-gray-600 mb-6">경쟁사들은 각각 명확한 트렌드를 주도하고 있습니다. '피부 장벽', '한방', '단일 성분'이 현재 시장을 이끄는 핵심 키워드이며, 특히 선스크린 카테고리는 폭발적인 바이럴 잠재력을 가집니다.</p>
+                <div class="chart-container-bar">
+                    <canvas id="trendChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-4">차트: 주요 K-Beauty 트렌드 관심도 비교</p>
+            </div>
+
+            <div class="lg:col-span-3">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] my-8">3. 주요 경쟁사 랜드스케이프</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col">
+                        <h3 class="text-xl font-bold text-[#118AB2] mb-3">아노아 (Anua)</h3>
+                        <p class="font-semibold text-gray-700">핵심 제품: 어성초 77% 수딩 토너</p>
+                        <p class="text-gray-600 mt-2 flex-grow">'단일 성분' 트렌드의 선두주자입니다. '어성초'라는 특정 성분을 전면에 내세워 진정 케어 시장을 공략했습니다. 틱톡 등에서 '글래스 스킨' 루틴의 핵심으로 바이럴되며 급성장했습니다.</p>
+                        <p class="text-sm font-medium text-[#FF6B6B] mt-4">핵심 전략: 인플루언서 협업, 틱톡 바이럴</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col">
+                        <h3 class="text-xl font-bold text-[#06D6A0] mb-3">스킨천사 (Skin1004)</h3>
+                        <p class="font-semibold text-gray-700">핵심 제품: 마다가스카르 센텔라 앰플</p>
+                        <p class="text-gray-600 mt-2 flex-grow">클린 뷰티와 '센텔라' 성분에 집중합니다. 미니멀한 패키징과 고순도 성분을 강조하며, 특히 민감성 피부 타겟의 '진정' 솔루션으로 아마존에서 강력한 팬덤을 구축했습니다.</p>
+                        <p class="text-sm font-medium text-[#FF6B6B] mt-4">핵심 전략: 아마존 리뷰, 클린 뷰티 포지셔닝</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 flex flex-col">
+                        <h3 class="text-xl font-bold text-[#FFD166] mb-3">조선미녀 (Beauty of Joseon)</h3>
+                        <p class="font-semibold text-gray-700">핵심 제품: 맑은쌀 선크림</p>
+                        <p class="text-gray-600 mt-2 flex-grow">'한방(Hanbang)' 성분을 현대적으로 재해석했습니다. 특히 '선크림'이 틱톡과 유튜브에서 "백탁 없는", "메이크업과 궁합 좋은" 제품으로 입소문을 타며 글로벌 히트 상품이 되었습니다.</p>
+                        <p class="text-sm font-medium text-[#FF6B6B] mt-4">핵심 전략: '선크림' 카테고리 장악, 헤리티지 스토리텔링</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] my-8">4. 핵심 판매 채널 전략: Amazon vs TikTok Shop</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-2xl font-bold text-[#073B4C] mb-4">TikTok Shop: 바이럴 기반 구매</h3>
+                        <p class="text-gray-600 mb-6">'발견'과 '즉흥 구매'의 채널입니다. 인플루언서의 사용 후기, 인상적인 제형(Texture) 영상이 구매로 직결됩니다. (예: 아노아 토너 패드, 조선미녀 선크림)</p>
+                        <div class="flex flex-col space-y-4 items-center p-4">
+                            <div class="flow-step text-center font-semibold p-3 rounded-lg w-4/5">1. 바이럴 영상 노출 (Before & After)</div>
+                            <div class="flow-arrow transform rotate-90">&darr;</div>
+                            <div class="flow-step text-center font-semibold p-3 rounded-lg w-4/5">2. 인플루언서 '구매 링크' 클릭</div>
+                            <div class="flow-arrow transform rotate-90">&darr;</div>
+                            <div class="flow-step text-center font-semibold p-3 rounded-lg w-4/5">3. 틱톡 샵 통한 즉시 결제</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-2xl font-bold text-[#073B4C] mb-4">Amazon: 검색 및 리뷰 기반 구매</h3>
+                        <p class="text-gray-600 mb-6">'신뢰'와 '검색'의 채널입니다. 고객은 특정 문제(예: "acne", "sensitive skin")를 해결하기 위해 검색하며, 높은 평점과 리뷰 수가 구매를 결정합니다. (예: 스킨천사 센텔라 앰플)</p>
+                        <div class="flex flex-col space-y-4 items-center p-4">
+                            <div class="flow-step text-center font-semibold p-3 rounded-lg w-4/5">1. 문제 키워드 검색 (예: "Cica Cream")</div>
+                            <div class="flow-arrow transform rotate-90">&darr;</div>
+                            <div class="flow-step text-center font-semibold p-3 rounded-lg w-4/5">2. 상위 노출 및 리뷰 확인 (4.5+ 별점)</div>
+                            <div class="flow-arrow transform rotate-90">&darr;</div>
+                            <div class="flow-step text-center font-semibold p-3 rounded-lg w-4/5">3. 'Subscribe & Save' 통한 반복 구매</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-[#073B4C] mb-6">5. 핵심 제안 및 포지셔닝 전략</h2>
+                <p class="text-gray-600 mb-6">성공적인 시장 진입을 위해, 경쟁사 분석을 토대로 한 명확한 포지셔닝이 필요합니다. '345 릴리프 크림'과 유사한 '더마 + 성분' 전략을 기본으로 하되, 타겟 플랫폼에 맞춘 차별화가 필요합니다.</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">브랜드</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">핵심 제품</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">제형 (Texture)</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">핵심 전략</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">주요 채널</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">엘시아 (Elshia)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">345 릴리프 크림</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">고농축 밤-크림 (Balm-Cream)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">피부 장벽 비율 (3:4:5) 강조, 더마 사이언스</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">자사몰, 전문몰</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">아노아 (Anua)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">어성초 토너</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">워터리 (Watery), 산뜻함</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">단일 성분 (어성초), '글래스 스킨' 트렌드</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">TikTok Shop, 인플루언서</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">스킨천사 (Skin1004)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">센텔라 앰플</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">가벼운 앰플 (Light Ampoule)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">클린/비건, 고순도 센텔라, 민감성 타겟</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Amazon, iHerb</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">조선미녀 (BoJ)</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">맑은쌀 선크림</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">크리미 (Creamy), 로션 타입</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">한방 성분 (쌀, 인삼), 선스크린 바이럴</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">TikTok Shop, Amazon, 유튜브</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-[#073B4C] mb-6">6. TikTok Shop 배송 전략 (참고)</h2>
+                <p class="text-gray-600 mb-6">틱톡 샵의 성공은 바이럴뿐만 아니라 '빠른 배송' 경험에 크게 좌우됩니다. 틱톡은 셀러에게 두 가지 주요 배송 옵션을 제공하며, 초기 전략 수립이 중요합니다.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border border-blue-200 bg-blue-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-[#118AB2] mb-3">1. Fulfilled by TikTok (FBT)</h3>
+                        <p class="text-gray-700">아마존 FBA와 유사하게, 틱톡의 물류 창고에 재고를 보내고 틱톡이 주문 처리, 피킹, 포장, 배송을 모두 담당합니다.</p>
+                        <ul class="list-disc list-inside mt-4 space-y-1 text-gray-600">
+                            <li><span class="font-semibold text-green-600">장점:</span> 배송 속도 보장, 'Fulfilled by TikTok' 뱃지로 신뢰도 상승, 물류 부담 감소.</li>
+                            <li><span class="font-semibold text-red-600">단점:</span> 재고 관리 유연성 낮음, 추가 수수료 발생.</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-300 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-700 mb-3">2. Ship from Seller (자체 배송)</h3>
+                        <p class="text-gray-700">셀러가 자체 창고 또는 3PL을 통해 직접 주문을 처리하고 배송합니다. 틱톡의 배송 시간 기준(예: 3일 이내 배송 완료)을 충족해야 합니다.</p>
+                        <ul class="list-disc list-inside mt-4 space-y-1 text-gray-600">
+                            <li><span class="font-semibold text-green-600">장점:</span> 재고 및 포장 완벽 통제, 브랜딩 용이, FBT 수수료 절감.</li>
+                            <li><span class="font-semibold text-red-600">단점:</span> 빠른 배송 기준 미충족 시 페널티, 물류 운영 부담.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-6"><b>초기 전략 제안:</b> 인지도가 낮은 초기에는 'Ship from Seller'로 시작하여 재고를 통제하고, 바이럴 발생 시 신속하게 'FBT'로 전환하여 폭발적인 주문량을 감당하고 배송 품질을 유지하는 하이브리드 전략을 권장합니다.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const sharedTooltipCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        window.addEventListener('load', () => {
+            const elshiaCtx = document.getElementById('elshiaChart').getContext('2d');
+            new Chart(elshiaCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['성분 포뮬러 (3:4:5 비율)', '더마 사이언스 마케팅', '제형 및 즉각적 효능'],
+                    datasets: [{
+                        label: '성공 요인',
+                        data: [50, 30, 20],
+                        backgroundColor: ['#118AB2', '#06D6A0', '#FFD166'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: sharedTooltipCallback
+                            }
+                        }
+                    }
+                }
+            });
+
+            const trendCtx = document.getElementById('trendChart').getContext('2d');
+            new Chart(trendCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        ['피부 장벽 복구', '(엘시아, 스킨천사)'],
+                        ['한방 (Hanbang)', '(조선미녀)'],
+                        ['단일 성분', '(아노아, 스킨천사)'],
+                        ['바이럴 선스크린', '(조선미녀)']
+                    ],
+                    datasets: [{
+                        label: '트렌드 관심도 (가상 수치)',
+                        data: [90, 85, 75, 95],
+                        backgroundColor: ['#118AB2', '#FFD166', '#06D6A0', '#FF6B6B'],
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: sharedTooltipCallback
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
